@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="/jquery/jquery.js"></script>
+<script>
+$(document).ready(function(){
+  $.ajaxSetup({cache:false});  // solved local data not updating problem
+  $("button").click(function(){	
+    $.get("1.txt",function(data,status){
+		$('#test').text("Data: " + data + " -- Status: " + status);
+    });
+  });
+});
+</script>
+</head>
+<body>
+
+<h2 id='test'>change file:///C:/xampp/htdocs to localhost</h2>
+
+<button> HTTP GET 1.txt request </button>
+
+</body>
+</html>
